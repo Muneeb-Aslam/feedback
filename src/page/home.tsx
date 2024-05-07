@@ -9,11 +9,11 @@ import { v4 as uuidv4 } from "uuid"
 
 const Home: FunctionComponent = () => {
   const [list, setList] = useState(FeedbackData);
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     const filterList = list.filter((item) => item.id !== id);
     setList(filterList);
   };
-  const addFeedback = (newFeedback:any)=>{
+  const addFeedback = (newFeedback:{rating:number,value:string})=>{
     const newItem = {
       id:uuidv4(),
       rating:newFeedback.rating,

@@ -1,5 +1,5 @@
 interface props {
-  list: Array<{ id: number; rating: number; text: string }>;
+  list: Array<{ id: string; rating: number; text: string }>;
 }
 const FeedbackStat: React.FC<props> = ({ list }) => {
   const average =

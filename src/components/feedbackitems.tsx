@@ -4,8 +4,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface props {
-  item: { id: number; rating: number; text: string };
-  onDelete: (id: number) => void;
+  item: { id: string; rating: number; text: string };
+  onDelete: (id: string) => void;
 }
 
 const FeedbackItems:React.FC<props> = ({ item, onDelete }) => {
