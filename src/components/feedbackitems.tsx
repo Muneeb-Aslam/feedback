@@ -8,7 +8,7 @@ interface props {
   onDelete: (id: number) => void;
 }
 
-const FeedbackItems = ({ item, onDelete }: props) => {
+const FeedbackItems:React.FC<props> = ({ item, onDelete }) => {
   return (
     <div className="card">
       <button onClick={() => onDelete(item.id)} className="close">

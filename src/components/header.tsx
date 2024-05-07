@@ -6,7 +6,7 @@ interface props{
   color:string;
 }
 
-const Header = ({text,bg,color}:props) => {
+const Header:React.FC<props> = ({text,bg,color}) => {
   return (
     <header style={{background:bg,color:color}}>
     <div className='container'>
