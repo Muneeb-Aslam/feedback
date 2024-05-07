@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import FeedbackItems from "./feedbackitems";
 
 interface props {
-  list: Array<{ id: number; rating: number; text: string }>;
-  onDelete: (id: number) => void;
+  list: Array<{ id: string; rating: number; text: string }>;
+  onDelete: (id: string) => void;
 }
 const FeedbackList: React.FC<props> = ({ list, onDelete }) => {
   return (
