@@ -9,10 +9,13 @@ interface props {
 const FeedbackForm: React.FC<props> = ({ add }) => {
   const [value, setValue] = useState<string>("");
   const [rating, setRating] = useState<number>(10);
-  
-  const handleSubmit = (e:any) => {
+  const [msg, setMsg] = useState<string>("");
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (value.trim().length > 10) add({ value, rating });
+    if (value.trim().length > 10) {
+      setMsg("");
+      add({ value, rating });
+    } else setMsg("Review must has length of 10 chars.");
   };
   return (
     <div className="card">
@@ -34,6 +37,7 @@ const FeedbackForm: React.FC<props> = ({ add }) => {
             Send
           </button>
         </div>
+        {msg.length > 0 && <span className="msg">{msg}</span>}
       </form>
     </div>
   );

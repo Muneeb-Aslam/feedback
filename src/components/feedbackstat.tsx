@@ -7,11 +7,12 @@ const FeedbackStat: React.FC<props> = ({ list }) => {
       return acc + cur.rating;
     }, 0) / list.length;
 
-    average.toFixed(1)
+    const toFixed = (n:number, fixed:number) => ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed);
+    const updatedaverage = toFixed(average,2)
   return (
     <div className="feedback-stats">
       <h4>{list.length} Reviews</h4>
-      <h4>Average Rating:{average}</h4>
+      <h4>Average Rating:{updatedaverage}</h4>
     </div>
   );
 };
