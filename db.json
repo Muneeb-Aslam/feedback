@@ -1,0 +1,24 @@
+{
+  "feedback": [
+    {
+      "rating": 8,
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
+      "id": "2"
+    },
+    {
+      "rating": 7,
+      "text": "newsdafksdjfkhkhsffffffafsdfsfsdfff",
+      "id": "a816c83b-a33f-49cc-912e-0c3b2204d9f3"
+    },
+    {
+      "id": "25ff9191-ecce-4084-a3dd-0d5dfd9208bd",
+      "rating": 10,
+      "text": "new added items testing json web server 2"
+    },
+    {
+      "id": "7b928af9-b640-4595-9d39-633adb9037f9",
+      "rating": 10,
+      "text": "new added items testing json web server 2"
+    }
+  ]
+}

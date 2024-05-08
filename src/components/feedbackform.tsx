@@ -1,20 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RatingSelect from "./ratingselect";
+import { FeedbackContext } from "../contexts/feedbackcontext";
+import { FeedbackContextType } from "../types/feedback";
 
-interface props {
-  add: (e: any) => void;
-}
-
-const FeedbackForm: React.FC<props> = ({ add }) => {
+const FeedbackForm: React.FC = () => {
+  const { add, edit, updateFeedback } = useContext(
+    FeedbackContext
+  ) as FeedbackContextType;
   const [value, setValue] = useState<string>("");
   const [rating, setRating] = useState<number>(10);
   const [msg, setMsg] = useState<string>("");
+  
+  useEffect(() => {
+    if (edit.edit) {
+      setRating(edit.item.rating);
+      setValue(edit.item.text);
+    }
+  }, [edit]);
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (value.trim().length > 10) {
       setMsg("");
-      add({ value, rating });
+      if (edit.edit) updateFeedback({ value, rating },edit.item.id);
+      else add({ value, rating });
     } else setMsg("Review must has length of 10 chars.");
   };
   return (
